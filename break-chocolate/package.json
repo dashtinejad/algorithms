@@ -1,13 +1,8 @@
 {
-    "name": "break-chocolate",
-    "version": "1.0.0",
-    "description": "",
-    "main": "break-chocolate.js",
     "scripts": {
         "test": "mocha"
     },
-    "author": "Mojtaba Dashtinejad <mojtaba@gmail.com> (https://github.com/dashtinejad)",
-    "license": "ISC",
+
     "devDependencies": {
         "chai": "^3.5.0",
         "mocha": "^3.1.2"
