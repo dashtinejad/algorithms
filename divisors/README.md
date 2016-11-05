@@ -1,9 +1,17 @@
 # Divisors
 
-Assume you have a chocolate bar consisting, as usual, of a number of squares arranged in a rectangular pattern. Your task is to split the bar into small squares (always breaking along the lines between the squares) with a minimum number of breaks. How many will it take?
+Create a function named divisors that takes an integer and returns an array with all of the integer's divisors(except for 1 and the number itself).
 
 ```js
-function breakChocolate(n, m) {
-    return n * m - 1;
+function divisors(n) {
+    let output = [];
+
+    for (let i = 2; i < n; i++) {
+        if (n % i == 0) {
+            output.push(i);
+        }
+    }
+
+    return output;
 }
 ```
