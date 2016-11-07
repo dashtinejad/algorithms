@@ -1,36 +1,19 @@
-# Eureka
+# Narcissistic
 
 
 
-The number 89 is the first integer with more than one digit that fulfills the property partially introduced in the title.
-What's the use of saying "Eureka"? Because this sum gives the same number.
+A Narcissistic Number is a number which is the sum of its own digits, each raised to the power of the number of digits.
 
-In effect: `89 = 8^1 + 9^2`
+For example, take 153 (3 digits):
 
-The next number in having this property is 135.
-
-See this property again: `135 = 1^1 + 3^2 + 5^3`
-
-```js
-function eureka(n) {
-    var arr = (n + "").split("");
-
-    let sum = 0;
-    arr.forEach((digit, i) => {
-        sum += Math.pow(digit, (i + 1));
-    });
-
-    return sum == n;
-}
+```
+1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
 ```
 
-```js
-function eureka(n) {
-    let sum = n
-        .toString() // make it string
-        .split('') // make array by each digit
-        .reduce((sum, digit, index) => sum + digit ** (index + 1), 0);
+and 1634 (4 digits):
 
-    return sum == n;
-}
 ```
+1^4 + 6^4 + 3^4 + 4^4 = 1 + 1296 + 81 + 256 = 1634
+```
+
+Your code must return `true` or `false` depending upon whether the given number is a Narcissistic number.
