@@ -13,10 +13,17 @@
         this[name] = definition();
     }
 })('factorial', function() {
-    return function factorial(n) {
-        if (n == 0) return 1;
-        else if (n < 3) return n;
+    let _cached = [];
+    return function f(n) {
+        if (typeof _cached[n] !== 'undefined')
+            return _cached[n];
 
-        return n * factorial(n - 1);
+        if (n == 0)
+            return 1;
+
+        let r = n * f(n - 1);
+        _cached[n] = r;
+
+        return r;
     };
 });
